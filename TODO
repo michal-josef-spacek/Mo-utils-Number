@@ -3,7 +3,8 @@ TODO
 2. Add doc.
 3. Rewrite tests of Utils::check_percent() to @BAD_VALUES, @RIGHT_VALUES.
    Test bad values like '.0', '-', '123.'.
-4.
+4. Add range checks.
+5.
 
 Applied
 =======
