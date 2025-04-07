@@ -5,9 +5,10 @@ use strict;
 use warnings;
 
 use Error::Pure qw(err);
+use Mo::utils::Number::Utils;
 use Readonly;
 
-Readonly::Array our @EXPORT_OK => qw(check_int check_natural
+Readonly::Array our @EXPORT_OK => qw(check_int check_natural check_percent
 	check_positive_natural);
 
 our $VERSION = 0.01;
@@ -38,6 +39,16 @@ sub check_natural {
 			'Value', $self->{$key},
 		;
 	}
+
+	return;
+}
+
+sub check_percent {
+	my ($self, $key) = @_;
+
+	_check_key($self, $key) && return;
+
+	Mo::utils::Number::Utils::check_percent($self->{$key}, $key, 'percent value');
 
 	return;
 }
