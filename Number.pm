@@ -6,7 +6,6 @@ use warnings;
 
 use Error::Pure qw(err);
 use Readonly;
-#use Scalar::Util qw(blessed looks_like_number);
 
 Readonly::Array our @EXPORT_OK => qw(check_int check_natural
 	check_positive_natural);
