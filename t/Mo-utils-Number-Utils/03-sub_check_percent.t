@@ -5,7 +5,7 @@ use English;
 use Error::Pure::Utils qw(clean err_msg_hr);
 use Mo::utils::Number::Utils qw(sub_check_percent);
 use Readonly;
-use Test::More 'tests' => 13;
+use Test::More 'tests' => 21;
 use Test::NoWarnings;
 
 Readonly::Array our @RIGTH_PERCENTS => (
@@ -13,6 +13,14 @@ Readonly::Array our @RIGTH_PERCENTS => (
 	'20.5%',
 );
 Readonly::Array our @BAD_PERCENTS => (
+	[
+		['-', 'key'],
+		"Parameter 'key' has bad percent value.",
+	],
+	[
+		['.0', 'key'],
+		"Parameter 'key' has bad percent value.",
+	],
 	[
 		['20', 'key'],
 		"Parameter 'key' has bad percent value (missing %).",
@@ -25,6 +33,14 @@ Readonly::Array our @BAD_PERCENTS => (
 		['20', 'key', undef, '20 is part of value'],
 		"Parameter 'key' has bad percent value (missing %).",
 		'20 is part of value',
+	],
+	[
+		['.0%', 'key'],
+		"Parameter 'key' has bad percent value.",
+	],
+	[
+		['123.%', 'key'],
+		"Parameter 'key' has bad percent value.",
 	],
 	[
 		['101%', 'key'],

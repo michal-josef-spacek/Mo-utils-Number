@@ -1,8 +1,6 @@
 TODO
 ====
 2. Add doc.
-3. Rewrite tests of Utils::check_percent() to @BAD_VALUES, @RIGHT_VALUES.
-   Test bad values like '.0', '-', '123.'.
 4. Add range checks.
 5. Add checks for int8, int16, etc. -> stash
 6.
@@ -11,3 +9,7 @@ Applied
 =======
 1. Implement check_percent
 OK [20250407] skim
+
+3. Rewrite tests of Utils::check_percent() to @BAD_VALUES, @RIGHT_VALUES.
+   Test bad values like '.0', '-', '123.'.
+OK [20250408] skim
