@@ -13,7 +13,7 @@ Readonly::Array our @EXPORT_OK => qw(check_int check_natural check_percent
 
 our $VERSION = 0.01;
 
-# .. -2, -1, 0, 1, 2, ...
+# ... -2, -1, 0, 1, 2, ...
 sub check_int {
 	my ($self, $key) = @_;
 
