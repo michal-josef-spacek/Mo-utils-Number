@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 use Error::Pure qw(err);
-use Mo::utils::Number::Utils;
+use Mo::utils::Number::Utils qw(sub_check_percent);
 use Readonly;
 
 Readonly::Array our @EXPORT_OK => qw(check_int check_natural check_percent
@@ -48,7 +48,7 @@ sub check_percent {
 
 	_check_key($self, $key) && return;
 
-	Mo::utils::Number::Utils::check_percent($self->{$key}, $key, 'percent value');
+	sub_check_percent($self->{$key}, $key, 'percent value');
 
 	return;
 }

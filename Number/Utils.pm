@@ -7,11 +7,11 @@ use warnings;
 use Error::Pure qw(err);
 use Readonly;
 
-Readonly::Array our @EXPORT_OK => qw(check_percent);
+Readonly::Array our @EXPORT_OK => qw(sub_check_percent);
 
 our $VERSION = 0.01;
 
-sub check_percent {
+sub sub_check_percent {
 	my ($value, $key, $func, $error_value) = @_;
 
 	if (! defined $error_value) {

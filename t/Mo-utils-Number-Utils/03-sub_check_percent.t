@@ -3,21 +3,21 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean err_msg_hr);
-use Mo::utils::Number::Utils qw(check_percent);
+use Mo::utils::Number::Utils qw(sub_check_percent);
 use Test::More 'tests' => 13;
 use Test::NoWarnings;
 
 # Test.
-my $ret = check_percent('20%', 'key');
+my $ret = sub_check_percent('20%', 'key');
 is($ret, undef, 'Get right percent value (20%).');
 
 # Test.
-$ret = check_percent('20.5%', 'key');
+$ret = sub_check_percent('20.5%', 'key');
 is($ret, undef, 'Get right percent value (20.5%).');
 
 # Test.
 eval {
-	check_percent('20', 'key');
+	sub_check_percent('20', 'key');
 };
 is($EVAL_ERROR, "Parameter 'key' has bad percent value (missing %).\n",
 	"Parameter 'key' has bad value percent (missing %) (20).");
@@ -27,7 +27,7 @@ clean();
 
 # Test.
 eval {
-	check_percent('bad', 'key');
+	sub_check_percent('bad', 'key');
 };
 is($EVAL_ERROR, "Parameter 'key' has bad percent value.\n",
 	"Parameter 'key' has bad value percent (bad).");
@@ -37,7 +37,7 @@ clean();
 
 # Test.
 eval {
-	check_percent('101%', 'key');
+	sub_check_percent('101%', 'key');
 };
 is($EVAL_ERROR, "Parameter 'key' has bad percent value.\n",
 	"Parameter 'key' has bad value percent (101%).");
@@ -47,7 +47,7 @@ clean();
 
 # Test.
 eval {
-	check_percent('20', 'key', undef, '20 is part of value');
+	sub_check_percent('20', 'key', undef, '20 is part of value');
 };
 is($EVAL_ERROR, "Parameter 'key' has bad percent value (missing %).\n",
 	"Parameter 'key' has bad value percent (missing %) (20, explicit error value).");
@@ -58,7 +58,7 @@ clean();
 
 # Test.
 eval {
-	check_percent('20', 'key', 'foo value');
+	sub_check_percent('20', 'key', 'foo value');
 };
 is($EVAL_ERROR, "Parameter 'key' has bad foo value (missing %).\n",
 	"Parameter 'key' has bad foo value (missing %) (20).");
