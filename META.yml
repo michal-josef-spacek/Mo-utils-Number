@@ -21,6 +21,7 @@ meta-spec:
 name: Mo-utils-Number
 no_index:
   directory:
+    - examples
     - inc
     - t
     - xt

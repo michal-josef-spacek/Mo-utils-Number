@@ -1,4 +1,9 @@
 Changes
+examples/check_int_fail.pl
+examples/check_int_ok.pl
+examples/check_natural_fail.pl
+examples/check_natural_ok.pl
+examples/sub_check_percent.pl
 inc/Module/Install.pm
 inc/Module/Install/AuthorRequires.pm
 inc/Module/Install/AuthorTests.pm

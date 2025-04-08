@@ -51,3 +51,87 @@ sub sub_check_percent {
 1;
 
 __END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+Mo::utils::Number::Utils - Utilities for Mo::utils::Number.
+
+=head1 SYNOPSIS
+
+ use Mo::utils::Number::Utils qw(sub_check_percent);
+
+ sub_check_percent($value, $key, $func, $error_value);
+
+=head1 SUBROUTINES
+
+=head2 C<sub_check_percent>
+
+ sub_check_percent($value, $key, $func, $error_value);
+
+Common subroutine for check percents.
+It is exportable.
+
+Returns undef.
+
+=head1 ERRORS
+
+ sub_check_percent():
+
+=head1 EXAMPLE
+
+=for comment filename=sub_check_percent.pl
+
+ use strict;
+ use warnings;
+
+ use Mo::utils::Number::Utils qw(sub_check_percent);
+
+ my $ret = sub_check_percent('20%', 'key', 'percent value', 'user value');
+ if (! defined $ret) {
+         print "Returns undef.\n";
+ }
+
+ # Output:
+ # Returns undef.
+
+=head1 DEPENDENCIES
+
+L<Error::Pure>,
+L<Exporter>,
+L<Readonly>.
+
+=head1 SEE ALSO
+
+=over
+
+=item L<Mo::utils::Number>
+
+Mo number utilities.
+
+=back
+
+=head1 REPOSITORY
+
+L<https://github.com/michal-josef-spacek/Mo-utils-Number>
+
+=head1 AUTHOR
+
+Michal Josef Špaček L<mailto:skim@cpan.org>
+
+L<http://skim.cz>
+
+=head1 LICENSE AND COPYRIGHT
+
+© 2024-2025 Michal Josef Špaček
+
+BSD 2-Clause License
+
+=head1 VERSION
+
+0.01
+
+=cut
