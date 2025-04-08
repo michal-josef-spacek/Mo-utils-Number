@@ -22,6 +22,7 @@ META.yml
 Number.pm
 Number/Utils.pm
 README
+SIGNATURE
 t/Mo-utils-Number-Utils/01-use.t
 t/Mo-utils-Number-Utils/02-version.t
 t/Mo-utils-Number-Utils/03-sub_check_percent.t
