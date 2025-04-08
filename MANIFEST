@@ -15,11 +15,18 @@ Makefile.PL
 MANIFEST			This list of files
 META.yml
 Number.pm
+Number/Utils.pm
 README
+t/Mo-utils-Number-Utils/01-use.t
+t/Mo-utils-Number-Utils/02-version.t
+t/Mo-utils-Number-Utils/03-sub_check_percent.t
 t/Mo-utils-Number/01-use.t
 t/Mo-utils-Number/02-version.t
 t/Mo-utils-Number/03-check_int.t
 t/Mo-utils-Number/04-check_natural.t
-t/Mo-utils-Number/05-check_positive_natural.t
+t/Mo-utils-Number/05-check_percent.t
+t/Mo-utils-Number/06-check_positive_natural.t
+xt/Mo-utils-Number-Utils/01-pod_coverage.t
+xt/Mo-utils-Number-Utils/02-pod.t
 xt/Mo-utils-Number/01-pod_coverage.t
 xt/Mo-utils-Number/02-pod.t
