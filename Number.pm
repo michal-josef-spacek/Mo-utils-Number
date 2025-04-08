@@ -11,7 +11,7 @@ use Readonly;
 Readonly::Array our @EXPORT_OK => qw(check_int check_natural check_percent
 	check_positive_natural);
 
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 # ... -2, -1, 0, 1, 2, ...
 sub check_int {
@@ -286,6 +286,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.01
+0.02
 
 =cut
