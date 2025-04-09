@@ -2,7 +2,9 @@ TODO
 ====
 4. Add range checks.
 5. Add checks for int8, int16, etc. -> stash
-6.
+6. Better error for percent > 100?
+   has percent value outside of 0-100 range.
+7.
 
 Applied
 =======
