@@ -108,7 +108,7 @@ Mo::utils::Number - Mo number utilities.
 
 =head1 SYNOPSIS
 
- use Mo::utils::number qw(check_int check_natural check_number check_percent check_positive_natural);
+ use Mo::utils::Number qw(check_int check_natural check_number check_percent check_positive_natural);
 
  check_int($self, $key);
  check_natural($self, $key);
