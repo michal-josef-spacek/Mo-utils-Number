@@ -1,12 +1,12 @@
 TODO
 ====
-4. Add range checks.
 5. Add checks for int8, int16, etc. -> stash
 6. Better error for percent > 100?
    has percent value outside of 0-100 range.
 7. Add examples to doc.
 8. Add checks for min/max value to be right number type.
-9.
+9. Add tests for ranges.
+10.
 
 Applied
 =======
@@ -19,3 +19,6 @@ OK [20250408] skim
 
 2. Add doc.
 OK [20250408] skim
+
+4. Add range checks.
+OK [20250427] skim

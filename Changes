@@ -1,4 +1,5 @@
 0.03
+ - Add range checks.
  - Fix typo in SYNOPSIS section in doc.
 
 0.02 2025-04-26T13:15:28+02:00

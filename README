@@ -192,6 +192,9 @@ DEPENDENCIES
     Error::Pure, Exporter, Readonly, Scalar::Util.
 
 SEE ALSO
+    Mo::utils::Number::Range
+        Mo number utilities for ranges.
+
     Mo  Micro Objects. Mo is less.
 
     Mo::utils

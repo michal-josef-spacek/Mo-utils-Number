@@ -331,6 +331,10 @@ L<Scalar::Util>.
 
 =over
 
+=item L<Mo::utils::Number::Range>
+
+Mo number utilities for ranges.
+
 =item L<Mo>
 
 Micro Objects. Mo is less.
