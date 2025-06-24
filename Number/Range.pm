@@ -72,7 +72,9 @@ sub check_percent_range {
 
 	check_percent($self, $key);
 
-	if ($self->{$key} < $min || $self->{$key} > $max) {
+	my $value = $self->{$key};
+	$value =~ s/%$//ms;
+	if ($value < $min || $value > $max) {
 		err "Parameter '".$key."' must be a percent between $min and $max.",
 			'Value', $self->{$key},
 		;
