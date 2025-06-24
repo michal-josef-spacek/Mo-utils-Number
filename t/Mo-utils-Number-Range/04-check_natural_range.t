@@ -10,13 +10,13 @@ use Test::NoWarnings;
 
 Readonly::Array our @BAD_RANGES => (
 	# Bad values.
-	[10.0001, 1, 2],
-	['foo', 1, 2],
-	[-1, -1, 2],
+	[10.0001, 1, 2, "Parameter 'key' must be a natural number."],
+	['foo', 1, 2, "Parameter 'key' must be a natural number."],
+	[-1, -1, 2, "Parameter 'key' must be a natural number."],
 
 	# Right values, but in bad range.
-	[1, 2, 3],
-	[4, 2, 3],
+	[1, 2, 3, "Parameter 'key' must be a natural number between 2 and 3."],
+	[4, 2, 3, "Parameter 'key' must be a natural number between 2 and 3."],
 );
 Readonly::Array our @RIGHT_RANGES => (
 	[0, 0, 2],
@@ -46,7 +46,6 @@ $self = {
 $ret = check_natural_range($self, 'key');
 is($ret, undef, "Value is undefined, that's ok.");
 
-my $i = 1;
 foreach my $range_ar (@BAD_RANGES) {
 	$self = {
 		'key' => $range_ar->[0],
@@ -54,16 +53,8 @@ foreach my $range_ar (@BAD_RANGES) {
 	eval {
 		check_natural_range($self, 'key', $range_ar->[1], $range_ar->[2]);
 	};
-	if ($i < 4) {
-		is($EVAL_ERROR, "Parameter 'key' must be a natural number.\n",
-			"Parameter 'key' must be a natural number. Value is '".$range_ar->[0]."'.");
-	} else {
-		is($EVAL_ERROR, "Parameter 'key' must be a natural number between ".$range_ar->[1]." and ".$range_ar->[2].".\n",
-			"Parameter 'key' must be a natural number between ".$range_ar->[1]." and ".$range_ar->[2].
-			". Value is '".$range_ar->[0]."'.");
-	}
+	is($EVAL_ERROR, $range_ar->[3]."\n", $range_ar->[3]." Value is '".$range_ar->[0]."'.");
 	my $err_msg_hr = err_msg_hr();
 	is($err_msg_hr->{'Value'}, $range_ar->[0], 'Test error parameter (Value: '.$range_ar->[0].').');
 	clean();
-	$i++;
 }
