@@ -31,7 +31,7 @@ foreach my $range_ar (@RIGHT_RANGES) {
 		'key' => $range_ar->[0],
 	};
 	$ret = check_natural_range($self, 'key', $range_ar->[1], $range_ar->[2]);
-	is($ret, undef, 'Right range is present ('.$self->{'key'}.' in range '.$range_ar->[0].', '.$range_ar->[1].').');
+	is($ret, undef, 'Right range is present ('.$self->{'key'}.' in range '.$range_ar->[1].', '.$range_ar->[2].').');
 }
 
 # Test.
