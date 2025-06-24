@@ -218,7 +218,7 @@ Returns undef.
                  Value: %s
          Parameter '%s' has bad percent value (missing %).
                  Value: %s
-         Parameter '%s' must be a percent between %s and %s.
+         Parameter '%s' must be a percent between %s% and %s%.
                  Value: %s
  check_positive_natural_range():
          Parameter '%s' must be a positive natural number.
