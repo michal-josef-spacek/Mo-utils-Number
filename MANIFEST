@@ -34,6 +34,7 @@ README
 SIGNATURE
 t/Mo-utils-Number-Range/01-use.t
 t/Mo-utils-Number-Range/02-version.t
+t/Mo-utils-Number-Range/03-check_int_range.t
 t/Mo-utils-Number-Utils/01-use.t
 t/Mo-utils-Number-Utils/02-version.t
 t/Mo-utils-Number-Utils/03-sub_check_percent.t
