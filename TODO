@@ -6,7 +6,8 @@ TODO
 7. Add examples to doc.
 8. Add checks for min/max value to be right number type.
 9. Add tests for ranges.
-10.
+10. Add non-zero integer.
+11.
 
 Applied
 =======
