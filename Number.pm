@@ -320,6 +320,48 @@ Returns undef.
  # Output like:
  # #Error [...Number.pm:?] Parameter 'key' must be a number.
 
+=head1 EXAMPLE7
+
+=for comment filename=check_percent_ok.pl
+
+ use strict;
+ use warnings;
+
+ use Mo::utils::Number qw(check_percent);
+
+ my $self = {
+         'key' => '10%',
+ };
+ check_percent($self, 'key');
+
+ # Print out.
+ print "ok\n";
+
+ # Output:
+ # ok
+
+=head1 EXAMPLE8
+
+=for comment filename=check_percent_fail.pl
+
+ use strict;
+ use warnings;
+
+ $Error::Pure::TYPE = 'Error';
+
+ use Mo::utils::Number qw(check_percent);
+
+ my $self = {
+         'key' => 'foo',
+ };
+ check_percent($self, 'key');
+
+ # Print out.
+ print "ok\n";
+
+ # Output like:
+ # #Error [...Number.pm:?] Parameter 'key' has bad percent value.
+
 =head1 DEPENDENCIES
 
 L<Error::Pure>,
