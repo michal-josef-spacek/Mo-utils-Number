@@ -362,6 +362,48 @@ Returns undef.
  # Output like:
  # #Error [...Number.pm:?] Parameter 'key' has bad percent value.
 
+=head1 EXAMPLE9
+
+=for comment filename=check_positive_natural_ok.pl
+
+ use strict;
+ use warnings;
+
+ use Mo::utils::Number qw(check_positive_natural);
+
+ my $self = {
+         'key' => '3',
+ };
+ check_positive_natural($self, 'key');
+
+ # Print out.
+ print "ok\n";
+
+ # Output:
+ # ok
+
+=head1 EXAMPLE10
+
+=for comment filename=check_positive_natural_fail.pl
+
+ use strict;
+ use warnings;
+
+ $Error::Pure::TYPE = 'Error';
+
+ use Mo::utils::Number qw(check_positive_natural);
+
+ my $self = {
+         'key' => -1,
+ };
+ check_positive_natural($self, 'key');
+
+ # Print out.
+ print "ok\n";
+
+ # Output like:
+ # #Error [...Number.pm:?] Parameter 'key' must be a positive natural number.
+
 =head1 DEPENDENCIES
 
 L<Error::Pure>,
