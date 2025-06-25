@@ -354,6 +354,48 @@ Returns undef.
  # Output like:
  # #Error [...Range.pm:?] Parameter 'key' must be a number between 1 and 10.
 
+=head1 EXAMPLE7
+
+=for comment filename=check_percent_range_ok.pl
+
+ use strict;
+ use warnings;
+
+ use Mo::utils::Number::Range qw(check_percent_range);
+
+ my $self = {
+         'key' => '10%',
+ };
+ check_percent_range($self, 'key', 1.1, 11);
+
+ # Print out.
+ print "ok\n";
+
+ # Output:
+ # ok
+
+=head1 EXAMPLE8
+
+=for comment filename=check_percent_range_fail.pl
+
+ use strict;
+ use warnings;
+
+ $Error::Pure::TYPE = 'Error';
+
+ use Mo::utils::Number::Range qw(check_percent_range);
+
+ my $self = {
+         'key' => 11,
+ };
+ check_percent_range($self, 'key', 1, 10);
+
+ # Print out.
+ print "ok\n";
+
+ # Output like:
+ # #Error [...Range.pm:?] Parameter 'key' has bad percent value (missing %).
+
 =head1 DEPENDENCIES
 
 L<Error::Pure>,
