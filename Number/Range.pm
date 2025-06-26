@@ -396,6 +396,48 @@ Returns undef.
  # Output like:
  # #Error [...Range.pm:?] Parameter 'key' has bad percent value (missing %).
 
+=head1 EXAMPLE9
+
+=for comment filename=check_positive_natural_range_ok.pl
+
+ use strict;
+ use warnings;
+
+ use Mo::utils::Number::Range qw(check_positive_natural_range);
+
+ my $self = {
+         'key' => '10',
+ };
+ check_positive_natural_range($self, 'key', 1.1, 11);
+
+ # Print out.
+ print "ok\n";
+
+ # Output:
+ # ok
+
+=head1 EXAMPLE10
+
+=for comment filename=check_positive_natural_range_fail.pl
+
+ use strict;
+ use warnings;
+
+ $Error::Pure::TYPE = 'Error';
+
+ use Mo::utils::Number::Range qw(check_positive_natural_range);
+
+ my $self = {
+         'key' => -2,
+ };
+ check_positive_natural_range($self, 'key', 1, 10);
+
+ # Print out.
+ print "ok\n";
+
+ # Output like:
+ # #Error [...Range.pm:?] Parameter 'key' must be a positive natural number.
+
 =head1 DEPENDENCIES
 
 L<Error::Pure>,
