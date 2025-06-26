@@ -1,4 +1,4 @@
-0.04
+0.04 2025-06-26T12:21:26+02:00
  - Add example for check_percent() to doc.
  - Add example for check_percent_range() to doc.
  - Add example for check_positive_natural() to doc.
