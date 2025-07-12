@@ -141,8 +141,10 @@ Mo number utilities for checking of data objects.
 
  check_int($self, $key);
 
-Check parameter defined by C<$key> if it's number integer (... -2, -1, 0, 1, 2, ...).
+Check if the parameter defined by C<$key> is an integer (... -2, -1, 0, 1, 2, ...).
 Value could be undefined or doesn't exist.
+
+Put error if check isn't ok.
 
 Returns undef.
 
@@ -150,8 +152,10 @@ Returns undef.
 
  check_natural($self, $key);
 
-Check parameter defined by C<$key> if it's number a natural number (0, 1, 2, ...).
+Check if the parameter defined by C<$key> is a natural number (0, 1, 2, ...).
 Value could be undefined or doesn't exist.
+
+Put error if check isn't ok.
 
 Returns undef.
 
@@ -161,7 +165,7 @@ Returns undef.
 
 I<Since version 0.02.>
 
-Check parameter defined by C<$key> which is number (positive or negative) or not.
+Check if the parameter defined by C<$key> is a number.
 Number could be integer, float, exponencial and negative.
 Implementation is via L<Scalar::Util/looks_like_number>.
 
@@ -173,8 +177,10 @@ Returns undef.
 
  check_percent($self, $key);
 
-Check parameter defined by C<$key> if it's number a percent.
+Check if the parameter defined by C<$key> is a percent.
 Value could be undefined or doesn't exist.
+
+Put error if check isn't ok.
 
 Returns undef.
 
@@ -184,7 +190,7 @@ Returns undef.
 
 I<Since version 0.05.>
 
-Check parameter defined by C<$key> if it's a positive decimal number.
+Check if the parameter defined by C<$key> is a positive decimal number.
 Value could be undefined or doesn't exist.
 
 Put error if check isn't ok.
@@ -195,8 +201,10 @@ Returns undef.
 
  check_positive_natural($self, $key);
 
-Check parameter defined by C<$key> if it's number a positive natural number (1, 2, ...).
+Check if the parameter defined by C<$key> is a positive natural number (1, 2, ...).
 Value could be undefined or doesn't exist.
+
+Put error if check isn't ok.
 
 Returns undef.
 
