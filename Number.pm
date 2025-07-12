@@ -10,7 +10,7 @@ use Readonly;
 use Scalar::Util qw(looks_like_number);
 
 Readonly::Array our @EXPORT_OK => qw(check_int check_natural check_number
-	check_percent check_positive_natural);
+	check_percent check_positive_decimal check_positive_natural);
 
 our $VERSION = 0.05;
 
@@ -69,6 +69,20 @@ sub check_percent {
 	return;
 }
 
+sub check_positive_decimal {
+	my ($self, $key) = @_;
+
+	_check_key($self, $key) && return;
+
+	if ($self->{$key} !~ m/^\d+(?:\.\d+)?$/ms || $self->{$key} == 0) {
+		err "Parameter '$key' must be a positive decimal number.",
+			'Value', $self->{$key},
+		;
+	}
+
+	return;
+}
+
 # 1, 2 ...
 sub check_positive_natural {
 	my ($self, $key) = @_;
@@ -108,12 +122,13 @@ Mo::utils::Number - Mo number utilities.
 
 =head1 SYNOPSIS
 
- use Mo::utils::Number qw(check_int check_natural check_number check_percent check_positive_natural);
+ use Mo::utils::Number qw(check_int check_natural check_number check_percent check_positive_decimal check_positive_natural);
 
  check_int($self, $key);
  check_natural($self, $key);
  check_number($self, $key);
  check_percent($self, $key);
+ check_positive_decimal($self, $key)
  check_positive_natural($self, $key);
 
 =head1 DESCRIPTION
@@ -163,6 +178,17 @@ Value could be undefined or doesn't exist.
 
 Returns undef.
 
+=head2 C<check_positive_decimal>
+
+ check_positive_decimal($self, $key)
+
+Check parameter defined by C<$key> if it's a positive decimal number.
+Value could be undefined or doesn't exist.
+
+Put error if check isn't ok.
+
+Returns undef.
+
 =head2 C<check_positive_natural>
 
  check_positive_natural($self, $key);
@@ -187,6 +213,9 @@ Returns undef.
          Parameter '%s' has bad percent value.
                  Value: %s
          Parameter '%s' has bad percent value (missing %).
+                 Value: %s
+ check_positive_decimal():
+         Parameter '%s' must be a positive decimal number.
                  Value: %s
  check_positive_natural():
          Parameter '%s' must be a positive natural number.
@@ -364,6 +393,48 @@ Returns undef.
 
 =head1 EXAMPLE9
 
+=for comment filename=check_positive_decimal_ok.pl
+
+ use strict;
+ use warnings;
+
+ use Mo::utils::Number qw(check_positive_decimal);
+
+ my $self = {
+         'key' => 3.2,
+ };
+ check_positive_decimal($self, 'key');
+
+ # Print out.
+ print "ok\n";
+
+ # Output:
+ # ok
+
+=head1 EXAMPLE10
+
+=for comment filename=check_positive_decimal_fail.pl
+
+ use strict;
+ use warnings;
+
+ $Error::Pure::TYPE = 'Error';
+
+ use Mo::utils::Number qw(check_positive_decimal);
+
+ my $self = {
+         'key' => -1.2,
+ };
+ check_positive_decimal($self, 'key');
+
+ # Print out.
+ print "ok\n";
+
+ # Output like:
+ # #Error [...Number.pm:?] Parameter 'key' must be a positive decimal number.
+
+=head1 EXAMPLE11
+
 =for comment filename=check_positive_natural_ok.pl
 
  use strict;
@@ -382,7 +453,7 @@ Returns undef.
  # Output:
  # ok
 
-=head1 EXAMPLE10
+=head1 EXAMPLE12
 
 =for comment filename=check_positive_natural_fail.pl
 

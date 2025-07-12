@@ -6,7 +6,6 @@ TODO
 7. Add examples to doc.
 8. Add checks for min/max value to be right number type.
 10. Add non-zero integer.
-11. Check for positive number.
 12.
 
 Applied
@@ -26,3 +25,6 @@ OK [20250427] skim
 
 9. Add tests for ranges.
 OK [20250625] skim
+
+11. Check for positive number.
+OK [20250712] skim

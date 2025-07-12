@@ -2,12 +2,13 @@ NAME
     Mo::utils::Number - Mo number utilities.
 
 SYNOPSIS
-     use Mo::utils::Number qw(check_int check_natural check_number check_percent check_positive_natural);
+     use Mo::utils::Number qw(check_int check_natural check_number check_percent check_positive_decimal check_positive_natural);
 
      check_int($self, $key);
      check_natural($self, $key);
      check_number($self, $key);
      check_percent($self, $key);
+     check_positive_decimal($self, $key)
      check_positive_natural($self, $key);
 
 DESCRIPTION
@@ -51,6 +52,16 @@ SUBROUTINES
 
     Returns undef.
 
+  "check_positive_decimal"
+     check_positive_decimal($self, $key)
+
+    Check parameter defined by $key if it's a positive decimal number. Value
+    could be undefined or doesn't exist.
+
+    Put error if check isn't ok.
+
+    Returns undef.
+
   "check_positive_natural"
      check_positive_natural($self, $key);
 
@@ -73,6 +84,9 @@ ERRORS
              Parameter '%s' has bad percent value.
                      Value: %s
              Parameter '%s' has bad percent value (missing %).
+                     Value: %s
+     check_positive_decimal():
+             Parameter '%s' must be a positive decimal number.
                      Value: %s
      check_positive_natural():
              Parameter '%s' must be a positive natural number.
@@ -228,6 +242,42 @@ EXAMPLE9
      use strict;
      use warnings;
 
+     use Mo::utils::Number qw(check_positive_decimal);
+
+     my $self = {
+             'key' => 3.2,
+     };
+     check_positive_decimal($self, 'key');
+
+     # Print out.
+     print "ok\n";
+
+     # Output:
+     # ok
+
+EXAMPLE10
+     use strict;
+     use warnings;
+
+     $Error::Pure::TYPE = 'Error';
+
+     use Mo::utils::Number qw(check_positive_decimal);
+
+     my $self = {
+             'key' => -1.2,
+     };
+     check_positive_decimal($self, 'key');
+
+     # Print out.
+     print "ok\n";
+
+     # Output like:
+     # #Error [...Number.pm:?] Parameter 'key' must be a positive decimal number.
+
+EXAMPLE11
+     use strict;
+     use warnings;
+
      use Mo::utils::Number qw(check_positive_natural);
 
      my $self = {
@@ -241,7 +291,7 @@ EXAMPLE9
      # Output:
      # ok
 
-EXAMPLE10
+EXAMPLE12
      use strict;
      use warnings;
 
