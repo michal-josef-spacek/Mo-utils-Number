@@ -182,6 +182,8 @@ Returns undef.
 
  check_positive_decimal($self, $key)
 
+I<Since version 0.05.>
+
 Check parameter defined by C<$key> if it's a positive decimal number.
 Value could be undefined or doesn't exist.
 
