@@ -1,4 +1,5 @@
 0.06
+ - Fix doc of Range checks.
 
 0.05 2025-07-12T19:36:00+02:00
  - Add check_positive_decimal() subroutine.

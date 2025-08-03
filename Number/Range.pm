@@ -126,11 +126,11 @@ Mo::utils::Number::Range - Mo number utilities for ranges.
 
  use Mo::utils::Number::Range qw(check_int_range check_natural_range check_number_range check_percent_range check_positive_natural_range);
 
- check_int_range($self, $key);
- check_natural_range($self, $key);
- check_number_range($self, $key);
- check_percent_range($self, $key);
- check_positive_natural_range($self, $key);
+ check_int_range($self, $key, $min, $max);
+ check_natural_range($self, $key, $min, $max);
+ check_number_range($self, $key, $min, $max);
+ check_percent_range($self, $key, $min, $max);
+ check_positive_natural_range($self, $key, $min, $max);
 
 =head1 DESCRIPTION
 
@@ -140,7 +140,7 @@ Mo number range utilities for checking of data objects.
 
 =head2 C<check_int_range>
 
- check_int_range($self, $key);
+ check_int_range($self, $key, $min, $max);
 
 I<Since version 0.03.>
 
@@ -151,7 +151,7 @@ Returns undef.
 
 =head2 C<check_natural_range>
 
- check_natural_range($self, $key);
+ check_natural_range($self, $key, $min, $max);
 
 I<Since version 0.03.>
 
@@ -162,7 +162,7 @@ Returns undef.
 
 =head2 C<check_number_range>
 
- check_number_range($self, $key);
+ check_number_range($self, $key, $min, $max);
 
 I<Since version 0.03.>
 
@@ -176,7 +176,7 @@ Returns undef.
 
 =head2 C<check_percent_range>
 
- check_percent_range($self, $key);
+ check_percent_range($self, $key, $min, $max);
 
 I<Since version 0.03.>
 
@@ -187,7 +187,7 @@ Returns undef.
 
 =head2 C<check_positive_natural_range>
 
- check_positive_natural_range($self, $key);
+ check_positive_natural_range($self, $key, $min, $max);
 
 I<Since version 0.03.>
 
