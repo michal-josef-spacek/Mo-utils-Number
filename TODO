@@ -6,7 +6,6 @@ TODO
 7. Add examples to doc.
 8. Add checks for min/max value to be right number type.
 10. Add non-zero integer.
-12. Add check_positive_decimal_range
 13. Percent without '%' sign?
 14.
 
@@ -30,3 +29,6 @@ OK [20250625] skim
 
 11. Check for positive number.
 OK [20250712] skim
+
+12. Add check_positive_decimal_range
+OK [20250909] skim
