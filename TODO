@@ -7,7 +7,8 @@ TODO
 8. Add checks for min/max value to be right number type.
 10. Add non-zero integer.
 13. Percent without '%' sign?
-14.
+14. Add scientific notation to range tests.
+15.
 
 Applied
 =======
