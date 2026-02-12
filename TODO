@@ -1,6 +1,7 @@
 TODO
 ====
 5. Add checks for int8, int16, etc. -> stash
+   Same with uint8, uint16, uint32, uint64.
 6. Better error for percent > 100?
    has percent value outside of 0-100 range.
 7. Add examples to doc.
