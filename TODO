@@ -1,7 +1,5 @@
 TODO
 ====
-5. Add checks for int8, int16, etc. -> stash
-   Same with uint8, uint16, uint32, uint64.
 6. Better error for percent > 100?
    has percent value outside of 0-100 range.
 7. Add examples to doc.
@@ -10,6 +8,7 @@ TODO
 13. Percent without '%' sign?
 14. Add scientific notation to range tests.
 15. Big numbers like 18446744073709551616 are changed to exponential form in some cases.
+    Tests 06-check_int64.t and 10-check_uint64.t prints bad values.
 16.
 
 Applied
@@ -35,3 +34,7 @@ OK [20250712] skim
 
 12. Add check_positive_decimal_range
 OK [20250909] skim
+
+5. Add checks for int8, int16, etc. -> stash
+   Same with uint8, uint16, uint32, uint64.
+OK [20260217] skim
