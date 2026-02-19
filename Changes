@@ -1,4 +1,5 @@
 0.10
+ - Fix test for big numbers. Parentheses help by not rounding.
 
 0.09 2026-02-19T09:58:18+01:00
  - Add aliases (check_int8, ..., check_uint8, ...).

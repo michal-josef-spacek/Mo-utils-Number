@@ -9,7 +9,9 @@ TODO
 14. Add scientific notation to range tests.
 15. Big numbers like 18446744073709551616 are changed to exponential form in some cases.
     Tests 06-check_int64.t and 10-check_uint64.t prints bad values.
-16.
+    This is print of Math::BigInt.
+16. Check maximum number in check_natural()?
+17.
 
 Applied
 =======
